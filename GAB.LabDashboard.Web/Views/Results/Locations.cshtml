@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GAB.LabDashboard.Web.Models.domain.ResultsByLocation>
+
+@{
+    ViewData["Title"] = "Results by Location";
+}
+
+<section class="results-container">
+    <h2>Results by Location</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>@Html.DisplayNameFor(model => model.LocationName)</th>
+                <th>@Html.DisplayNameFor(model => model.Score)</th>
+                <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var position = 0;
+
+                foreach (var item in Model)
+                {
+                    position++;
+                    <tr>
+                        <td>@position</td>
+                        <td>@Html.DisplayFor(modelItem => item.LocationName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</section>

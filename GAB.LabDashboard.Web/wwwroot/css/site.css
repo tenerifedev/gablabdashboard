@@ -1,0 +1,142 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+nav .container {
+    align-items: stretch !important;
+    justify-content: space-between !important;
+}
+
+#site-link-home {
+    flex: 1 1 auto !important;
+    line-height:40px !important;
+    text-align: left !important;
+}
+
+#site-menu {
+    text-align: right;
+    flex: 1 1 auto !important;
+}
+
+
+    #site-menu .navbar-nav {
+        flex-grow: 0 !important;
+    }
+
+        #site-menu .navbar-nav .nav-item {
+            padding: 8px 12px;
+        }
+
+.navbar .dropdown-menu .dropdown-item {
+    padding: 6px 20px;
+}
+
+    .navbar .dropdown-menu .dropdown-item:hover {
+        background: rgba(255,255,255,0.25);
+        font-weight: bold;
+    }
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) ), url('/images/layout/jason-blackeye-213258-pg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#site-body {
+    flex: 1;
+}
+
+.dashboard-panel {
+    display: block;
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 123, 255, .75) !important;
+    text-decoration: none;
+}
+
+    .dashboard-panel:hover {
+        background-color: rgb(0, 123, 255) !important;
+        text-decoration: none;
+    }
+
+.panel-title {
+    font-size: 17pt;
+}
+
+.panel-value {
+    font-size: 23pt;
+}
+
+.results-container {
+    margin: 20px 0;
+    padding: 40px;
+    background-color: rgba(0, 123, 255, .75) !important;
+    color: #fff;
+}
+
+.results-container h2 {
+    margin-bottom: 24px;
+}
+
+.results-container .table th {
+    background: #676767;
+    border: none;
+}
+
+.footer {
+    line-height: 23px;
+    background-color: rgba(0, 123, 255, .75) !important;
+}
+
+#footer-mission {
+    padding: 40px 20px;
+}
+
+#footer-copyright {
+    padding: 40px 20px;
+}
