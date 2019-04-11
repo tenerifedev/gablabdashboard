@@ -14,6 +14,7 @@ namespace GAB.LabDashboard.Web.Data
         public DbSet<ResultsByCompany> ResultsByCompany { get; set; }
         public DbSet<ResultsByCountry> ResultsByCountry { get; set; }
         public DbSet<ResultsByLocation> ResultsByLocation { get; set; }
+        public DbSet<ResultsByTeam> ResultsByTeam { get; set; }
         public DbSet<ResultsData> ResultsData { get; set; }
         public DbSet<Summary> Summary { get; set; }
 

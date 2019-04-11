@@ -36,5 +36,9 @@ namespace GAB.LabDashboard.Web.Controllers
             return View(await context.ResultsByLocation.OrderByDescending(i => i.Score).ToListAsync());
         }
 
+        public async Task<IActionResult> Teams()
+        {
+            return View(await context.ResultsByTeam.OrderByDescending(i => i.Score).ToListAsync());
+        }
     }
 }
