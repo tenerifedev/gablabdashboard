@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="@Url.Content("~/images/layout/badge-final-16.png")" sizes="16x16">
+    <link rel="icon" type="image/png" href="@Url.Content("~/images/layout/badge-final-24.png")" sizes="24x24">
+    <link rel="icon" type="image/png" href="@Url.Content("~/images/layout/badge-final-32.png")" sizes="32x32">
+    <link rel="icon" type="image/png" href="@Url.Content("~/images/layout/badge-final-48.png")" sizes="48x48">
+    <link rel="icon" type="image/png" href="@Url.Content("~/images/layout/badge-final-64.png")" sizes="64x64">
     <title>Global Azure Bootcamp - Science Lab</title>
 
     <environment include="Development">
@@ -18,17 +23,20 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header class="bg-dark">
+    <header id="site-header" class="bg-dark">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
             <div class="container">
-                <a id="site-link-home" class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Global Azure Bootcamp - Science Lab</a>
+                <a id="site-link-home" class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img id="site-logo" src="@Url.Content("~/images/layout/badge-final-128.png")" alt="Global Azure Bootcamp Science Lab Logo" />
+                    Science Lab
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="site-menu" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab">Instructions</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab" target="_blank">Instructions</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Leaderboards
@@ -38,6 +46,7 @@
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Companies">By Company</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Countries">By Country</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Locations">By Location</a>
+                                <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Teams">By Team</a>
                             </div>
                         </li>
                     </ul>
@@ -56,7 +65,7 @@
                 One of the missions of Global Azure Bootcamp is to provide a lab that gives researchers access to large scale computing resources to help process vast quantities of data. In previous years we have tried to bring you a science lab that is both interesting and represents great research. This year is no exception, this year we bring you the stars themselves!
             </div>
             <div id="footer-copyright" class="text-light">
-                &copy; 2019 - <a class="text-light" href="http://azurebootcamp.es">Global Azure Bootcamp</a> - <a class="text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                &copy; 2019 - <a class="text-light" href="http://azurebootcamp.es">Global Azure Bootcamp</a>
             </div>
         </div>
     </footer>

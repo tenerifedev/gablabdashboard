@@ -86,6 +86,11 @@ body {
     min-height: 100vh;
 }
 
+#site-logo {
+    width: 64px; 
+    margin-right: 16px;
+}
+
 #site-body {
     flex: 1;
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GAB.LabDashboard.Web.Models.domain
 {
-    public class ResultsByCompany : AggregateBase
+    public class ResultsByTeam : AggregateBase
     {
-        [DisplayName("Company")]
-        public string CompanyName{ get; set; }
+        [DisplayName("Team")]
+        public string TeamName { get; set; }
     }
 }
