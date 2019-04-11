@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Results by Country";
 }
-<section class="results-container">
+<section class="results-container countries-container">
     <h2>Results by Country</h2>
 
-    <table class="table">
+    <table class="table countries-results">
         <thead>
             <tr>
                 <th>Position</th>
@@ -25,7 +25,7 @@
                     position++;
                     <tr>
                         <td>@position</td>
-                        <td>@Html.DisplayFor(modelItem => item.CountryCode)</td>
+                        <td><img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.CountryCode)</td>
                         <td>@Html.DisplayFor(modelItem => item.CountryName)</td>
                         <td>@Html.DisplayFor(modelItem => item.Score)</td>
                         <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
