@@ -14,7 +14,7 @@ namespace GAB.LabDashboard.Web.Models.domain
         public int Countries {get; set; }
         public int Inputs   {get; set; }
         public int Runs    {get; set; }
-        public int Hours    {get; set; }
+        public double Hours    {get; set; }
         public int Cores    {get; set; }
     }
 }
