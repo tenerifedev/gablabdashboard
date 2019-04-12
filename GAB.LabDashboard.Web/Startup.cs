@@ -37,6 +37,8 @@ namespace GAB.LabDashboard.Web
                                                    options.UseSqlServer(
                                                        Configuration.GetConnectionString("GABDashboardConnection")));
 
+            services.AddMemoryCache();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
