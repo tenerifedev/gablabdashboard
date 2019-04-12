@@ -8,24 +8,34 @@ using GAB.LabDashboard.Web.Models;
 using GAB.LabDashboard.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using GAB.LabDashboard.Web.Models.domain;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 
 namespace GAB.LabDashboard.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly AppDataContext context;
+        private readonly IMemoryCache _cache;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(AppDataContext context)
+        public HomeController(AppDataContext context, IMemoryCache memoryCache, IConfiguration configuration)
         {
             this.context = context;
+            _cache = memoryCache;
+            _configuration = configuration;
         }
 
+        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Index()
-        {
-            Summary summary = new Summary();
-            if(context.Summary.Count() > 0)
-                summary = await context.Summary.FirstOrDefaultAsync();
-            return View(summary);
+        {            
+            Summary result;
+            if (!_cache.TryGetValue("GAB:Summary", out result))
+            {
+                result = await context.Summary.FirstOrDefaultAsync();
+                _cache.Set("GAB:Summary", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
+            }
+            return View(result);
         }
 
         public IActionResult Privacy()
