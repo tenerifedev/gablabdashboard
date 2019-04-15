@@ -31,7 +31,7 @@ namespace GAB.LabDashboard.Web.Controllers
             List<ResultsByAttendee> result;
             if (!_cache.TryGetValue("GAB:Attendees", out result))
             {
-                result = await context.ResultsByAttendee.OrderByDescending(i => i.Score).ToListAsync();
+                result = await context.ResultsByAttendee.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopAttendees")).ToListAsync();
                 _cache.Set("GAB:Attendees", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
@@ -43,7 +43,7 @@ namespace GAB.LabDashboard.Web.Controllers
             List<ResultsByCompany> result;
             if (!_cache.TryGetValue("GAB:Companies", out result))
             {
-                result = await context.ResultsByCompany.OrderByDescending(i => i.Score).ToListAsync();
+                result = await context.ResultsByCompany.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopCompanies")).ToListAsync();
                 _cache.Set("GAB:Companies", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
@@ -55,7 +55,7 @@ namespace GAB.LabDashboard.Web.Controllers
             List<ResultsByCountry> result;
             if (!_cache.TryGetValue("GAB:Countries", out result))
             {
-                result = await context.ResultsByCountry.OrderByDescending(i => i.Score).ToListAsync();
+                result = await context.ResultsByCountry.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopCountries")).ToListAsync();
                 _cache.Set("GAB:Countries", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
@@ -67,7 +67,7 @@ namespace GAB.LabDashboard.Web.Controllers
             List<ResultsByLocation> result;
             if (!_cache.TryGetValue("GAB:Locations", out result))
             {
-                result = await context.ResultsByLocation.OrderByDescending(i => i.Score).ToListAsync();
+                result = await context.ResultsByLocation.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopLocations")).ToListAsync();
                 _cache.Set("GAB:Locations", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
@@ -79,7 +79,7 @@ namespace GAB.LabDashboard.Web.Controllers
             List<ResultsByTeam> result;
             if (!_cache.TryGetValue("GAB:Teams", out result))
             {
-                result = await context.ResultsByTeam.OrderByDescending(i => i.Score).ToListAsync();
+                result = await context.ResultsByTeam.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopTeams")).ToListAsync();
                 _cache.Set("GAB:Teams", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
