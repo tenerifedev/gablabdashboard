@@ -5,6 +5,7 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <UserSecretsId>80b4b567-dabe-4381-9273-6cb4b7dd20a6</UserSecretsId>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
   </PropertyGroup>
 
 
@@ -14,6 +15,93 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\js\vendor\apexcharts\CHANGELOG.md" />
+    <None Include="wwwroot\js\vendor\apexcharts\dist\apexcharts.amd.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\dist\apexcharts.common.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\dist\apexcharts.esm.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\dist\apexcharts.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\dist\apexcharts.min.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\LICENSE" />
+    <None Include="wwwroot\js\vendor\apexcharts\README.md" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\.DS_Store" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\apexcharts.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-camera.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-home.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-menu.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-minus-square.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-minus.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-pan-hand.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-pan.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-plus-square.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-plus.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-refresh.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-reset.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-select.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-select1.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-zoom-in.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-zoom-out.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\assets\ico-zoom.svg" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Bar.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\BarStacked.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\CandleStick.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\HeatMap.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Line.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Pie.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Radar.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Radial.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\charts\Scatter.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Animations.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Annotations.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\axes\Grid.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\axes\XAxis.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\axes\YAxis.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Base.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Core.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\CoreUtils.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Crosshairs.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\DataLabels.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Dimensions.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Exports.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Fill.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Filters.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Formatters.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Graphics.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Legend.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Markers.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Range.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Responsive.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Scales.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Series.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\settings\Config.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\settings\Defaults.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\settings\Globals.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\settings\Options.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Theme.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\TimeScale.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\TitleSubtitle.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\Toolbar.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\AxesTooltip.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Intersect.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Labels.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Marker.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Position.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Tooltip.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\tooltip\Utils.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\modules\ZoomPanSelection.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\svgjs\svg.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\utils\ClassListPolyfill.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\utils\DateTime.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\utils\DetectElementResize.js" />
+    <None Include="wwwroot\js\vendor\apexcharts\src\utils\Utils.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\js\vendor\apexcharts\types\apexcharts.d.ts" />
   </ItemGroup>
 
 </Project>
