@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Results by Teams";
+
+    //var data =
 }
 
 @section Scripts {
@@ -9,14 +11,33 @@
     <script>
         var options = {
             chart: {
-                type: 'line'
+                type: 'pie',
+                height: 300,
+                foreColor: '#f0f0f0',
+                fontFamily: 'Helvetica, Arial, sans-serif',
             },
-            series: [{
-                name: 'sales',
-                data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
-            }],
-            xaxis: {
-                categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+            stroke: {
+                show: true,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 0,
+                dashArray: 0,      
+            },
+            series: [66, 18, 9, 5, 2],
+            labels: ['Global Azure Team', 'Treekies', 'TenerifeDev', 'Intelequia Team', "Rayo Team"],
+            colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea'],
+            markers: {
+                colors: ['#0088ff', '#0088ff', '#0088ff', '#0088ff', '#0088ff']
+            },
+            dataLabels: {
+                enabled: false,
+                style: {
+                    colors: ['#363636', '#363636', '#363636', '#363636', '#363636']
+                }
+            },
+            fill: {
+                colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea']
             }
         }
 

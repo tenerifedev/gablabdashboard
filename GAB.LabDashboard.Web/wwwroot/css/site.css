@@ -26,7 +26,7 @@ nav .container {
 
 #site-link-home {
     flex: 1 1 auto !important;
-    line-height:40px !important;
+    line-height: 40px !important;
     text-align: left !important;
 }
 
@@ -79,7 +79,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) ), url('/images/layout/jason-blackeye-213258-pg.jpg');
+    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) ), url('/images/layout/wallpaper-universe-8.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -87,7 +87,7 @@ body {
 }
 
 #site-logo {
-    width: 64px; 
+    width: 64px;
     margin-right: 16px;
 }
 
@@ -120,24 +120,42 @@ body {
 .results-container {
     margin: 20px 0;
     padding: 40px;
-    background-color: rgba(0, 123, 255, .75) !important;
+    /*background-color: rgba(0, 123, 255, .75) !important;*/
+    /*background-color: rgba(255, 255, 255, .35) !important;*/
     color: #fff;
+    /*box-shadow: rgba(255,255,255, .35) 0 0 30px;*/
 }
 
-.results-container h2 {
-    margin-bottom: 24px;
-}
+    .results-container h2 {
+        margin-bottom: 24px;
+    }
 
-.results-container .table th {
-    background: #676767;
-    border: none;
-}
+    .results-container #chart {
+        background-color: rgba(0, 0, 0, .15) !important;
+        color: #fff;
+        padding: 20px;
+    }
 
-.results-container .countries-results .country-flag {
-    max-width: 36px;
-    vertical-align: middle;
-    margin-right:8px;
-}
+    .results-container .table {
+        border-bottom: 1px solid rgba(40,40,40,0.25);
+    }
+
+        .results-container .table th {
+            background: #14365c;
+            border: none !important;
+        }
+
+        .results-container .table td {
+            background: rgba(74,74, 74, 0.65);
+            border-top: none !important;
+            border-bottom: 1px solid rgba(40,40,40,0.25);
+        }
+
+    .results-container .countries-results .country-flag {
+        max-width: 36px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
 
 .footer {
     line-height: 23px;
