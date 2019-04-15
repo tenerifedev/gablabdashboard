@@ -79,7 +79,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) ), url('/images/layout/jason-blackeye-213258-pg.jpg');
+    background: linear-gradient( rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) ), url('/images/layout/universe-3607912_1920.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -93,6 +93,15 @@ body {
 
 #site-body {
     flex: 1;
+}
+
+.dashboard-panel-static {
+    display: block;
+    margin: 10px;
+    padding: 20px;
+    color: #fff!important;
+    background-color: rgba(24, 57, 95, .75) !important;
+    text-decoration: none;
 }
 
 .dashboard-panel {
@@ -123,6 +132,13 @@ body {
     background-color: rgba(0, 123, 255, .75) !important;
     color: #fff;
 }
+    .results-container a,
+    .results-container a:link,
+    .results-container a:hover,
+    .results-container a:visited {
+        color: yellow;
+        font-weight: bold;
+    }
 
 .results-container h2 {
     margin-bottom: 24px;
@@ -145,9 +161,32 @@ body {
 }
 
 #footer-mission {
-    padding: 40px 20px;
+    padding: 20px;
+    font-size: 0.9em;
 }
 
 #footer-copyright {
-    padding: 40px 20px;
+    padding-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.is-resized {
+    width: auto;
+    text-align: center;
+    padding: 20px;
+}
+.is-resized img {
+    max-width: 100%;
+    height:auto;
+}
+
+.is-resized iframe {
+    width: 100%;
+    height: 350px;
+}
+
+.is-resized figcaption {
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 20px;
 }
