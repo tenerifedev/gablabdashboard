@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+    <div class="results-container">
+        <h1>@ViewData["Title"]</h1>
+
+        <p>Looking for the Unknown</p>
+
+
+
+        <h2>Global Azure Science Lab 2019</h2>
+
+
+
+        <p>Have you ever wanted to discover a planet? How about discovering a planet around another star?</p>
+
+
+
+        <p>We are super excited about the lab this year and have once again teamed up with the <a href="http://www.iac.es/index.php?lang=en">Instituto de Astrofisica de Canarias</a> in Tenerife to bring you something really interesting, read below for a message direct from the team at IAC.</p>
+
+
+
+        <p class="is-resized"><img src="~/images/iac-logo-300x300.png" alt="Instituto de Astrofísica de Canarias" class="wp-image-27939" width="239" height="239" /></p>
+
+
+
+        <h3>Let&#8217;s go and discover a planet!</h3>
+
+
+
+        <p>“<em>The research field of exoplanets is one of the fastest developing areas within modern Astrophysics. Over the past 25 years, we have discovered more than 4000 new worlds around stars other than the Sun, by means of detecting the reflex motion that these planets cause on their stars or the periodic dimming of the stellar light if the planet crosses the stellar disc during its orbit. This latter phenomenon is called an <strong>exoplanet transit</strong>. Finding new planets via transit detection is nowadays the major source of new planet discoveries. Past dedicated space mission such as CoRoT and Kepler have provided us with strong statistics on the occurrence of planets and their diverse population properties. We now know for example that on average there is more than one planet per star, and that small stars (the most abundant in our galaxy) tend to have several planets of rocky nature.</em></p>
+
+
+
+        <p><em>But planetary transits offer another advantage, these planets provide a very favorable setup for the characterization of the planetary atmosphere, exploiting the fact that part of the stellar light crosses the planetary atmosphere on its path to Earth. The chemical composition of that atmosphere is imprinted in the stellar light in the form of atomic and molecular absorption features. This has led to the detection of several species in the atmosphere of large giant planets and opened the door for conducting similar studies for earth-like planets in the near future. Previous missions were limited to relatively small regions of the sky. Currently NASA’s <strong>TESS mission</strong> is performing a survey of the whole sky in search for transits. The primary goal is to find planets around the brightest and closest stars to Earth in order to provide the best candidates for in-depth study of their physical properties, including atmospheric characterization, and in the future the search for possible signs of life, or biomarkers.</em></p>
+
+
+
+        <div class="is-resized">
+            <iframe width="800" src="https://www.youtube.com/embed/Q4KjvPIbgMI?feature=oembed&#038;wmode=opaque" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <figcaption>We&#8217;ll be analyzing the TESS data at the Global Azure Bootcamp 2019 Science Lab</figcaption>
+        </div>
+
+
+
+        <p><em>In this science lab, we are going to systematically <strong>analyze the new TESS data by using a ML algorithm</strong>, searching for new planet discoveries in millions of stellar light curves. We aim to discover and classify, using machine learning algorithms, not only new planet candidates but also families of new phenomena, such as disintegrating planets, binary stars, and all sorts of possible unique objects that are waiting to be discovered in this treasure database.”</em></p>
+
+
+
+        <div class="is-resized">
+            <iframe width="800" src="https://www.youtube.com/embed/C8MLgLC51C8?feature=oembed&#038;wmode=opaque" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <figcaption>Global Azure Bootcamp 2019 &#8211; Science Lab</figcaption>
+        </div>
+
+
+
+        <h2>Science Lab details</h2>
+
+
+
+        <p>We&#8217;re very excited on this year science lab and see what we can do all together. On April 27th we will launch the Lab, and this year our intention is that the GAB day will be just the first. The science lab server that provides with light curves to analyze will continue running at least until the end of the TESS mission and we have analyzed all the data with the current machine learning algorithms. </p>
+
+
+
+        <p>At the moment, we are preparing a big amount of light curves by cutting the Full Frame Images (FFIs) into Target Pixel Files (TPFs) that will be consumed by the science lab. The stars being analyzed will be the ones with TESS magnitude lower than 17, resulting in around 4 million stars to check per observing sector. If we feed the lab with the six sectors currently available, we will start with <strong>25 million stars to analyze on the GAB day</strong>. </p>
+
+
+
+        <p class="is-resized"><img src="~/images/GAB-Science-Lab-1-1024x484.png" alt="" class="wp-image-31818" /></p>
+
+
+
+<p>So once we have prepared all the data, we need your help to process it by running two pipelines: the first one that will create the light curves, and a second one running a machine learning algorithm that will predict the probability of the existence of an exoplanet orbiting the star. Don&#8217;t worry, all will be automated inside a Docker container, and we will give you detailed instructions on how to start playing with the lab in a few steps.</p>
+
+
+
+<p class="is-resized"><img src="~/images/GAB-Science-Lab-3-1024x320.png" alt="" class="wp-image-31823" /></p>
+
+
+
+<p>The science lab will be running into three parts:</p>
+
+
+
+        <ul><li><strong>The GAB Server</strong>: this will be a GAB Team hosted service that will orchestrate the queue of data to process, assigning each TPF to a GAB Client;</li><li><strong>The GAB Client</strong>: this will be a Docker container running in your environment&#8230; and yes, when we say environment, that means you should be able to run the client on Azure VMs, on AKS, on a server running on-premises or on other cloud, or even in your own laptop running Windows/Linux/Mac;</li><li><strong>The GAB Dashboards</strong>: there will be the usual point scoring and system dashboard so you or your location can compete with others around the world.</li></ul>
+
+
+
+        <p>If you want to join us to familiarize on the deployment and how you can help with the science lab, check the <a href="https://global.azurebootcamp.net/forums/topic/science-lab/">forums for the Science Lab topic</a>. </p>
+
+
+
+        <h3>Thanks to the Science Lab team</h3>
+
+
+
+        <p>Special thanks to the people that has invested their invaluable time on building this project for the future of the humanity. </p>
+
+
+
+        <ul><li><strong>Sebastián Hidalgo</strong>, Dr. Astrophysics, Institute of Astrophysics of the Canary Islands (working on the ML pipeline)</li><li><strong>Enric Pallé</strong>,  Dr. Astrophysics, Institute of Astrophysics of the Canary Islands (exoplanet research team)</li><li><strong>Diego Hidalgo</strong>, Master&#8217;s Degree in Astrophysics, Institute of Astrophysics of the Canary Islands (working on the light curves pipeline)</li><li><a href="https://twitter.com/davidjrh">David Rodriguez</a>, CTO at Intelequia, Azure MVP &amp; Regional Director (project coordinator, TESS data processing)</li><li><a href="https://twitter.com/martinabbott">Martin Abbott</a>, Solution Architect at Insight, Azure MVP (project coordination)</li><li><a href="https://twitter.com/alber86">Alberto Marcos</a>, Higher Education Account Executive, Microsoft Iberica (TESS data processing)</li><li><a href="https://twitter.com/VectorShordan">Victor Calero</a>, Software Engineer, Intelequia (video production)</li><li><a href="https://twitter.com/saintwukong">Santiago Porras</a>, Innovation Team Lead at Encamina (Global Dashboards)</li></ul>
+
+
+
+        <p class="is-resized"><img src="~/images/IMG_1457c.jpg" alt="" class="wp-image-31832" /></p>
+</div>
