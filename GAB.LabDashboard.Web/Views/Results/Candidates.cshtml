@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GAB.LabDashboard.Web.Models.domain.ResultsData>
+
+@{
+    ViewData["Title"] = "List of Exoplanet candidates";
+}
+<style>
+    body {
+        background-image: none;
+        background-color: lightslategrey; /* fallback color */
+        background: linear-gradient( to bottom, lightslategrey, black );
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+    <section class="results-container">
+        <h2>Latest Exoplanet Candidates</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>@Html.DisplayNameFor(model => model.ModificationDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.Fullname)</th>
+                    <th>@Html.DisplayNameFor(model => model.TICId)</th>
+                    <th>Source</th>
+                    <th>@Html.DisplayNameFor(model => model.IsPlanet)</th>
+                    <th>@Html.DisplayNameFor(model => model.IsNotPlanet)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var position = 0;
+
+                    foreach (var item in Model)
+                    {
+                        position++;
+                                <tr>
+                                    <td>@position</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ModificationDate)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Fullname)</td>
+                                    <td>
+                                        <div><strong>@Html.DisplayFor(modelItem => item.TICId)</strong></div>
+                                        <div class="small">@Html.DisplayNameFor(model => model.RA) = @Html.DisplayFor(modelItem => item.RA)</div>
+                                        <div class="small">@Html.DisplayNameFor(model => model.Dec) = @Html.DisplayFor(modelItem => item.Dec)</div>
+                                        <div class="small">@Html.DisplayNameFor(model => model.TMag) = @string.Format("{0:N5}%", item.TMag)</div>
+                                    </td>
+                                    <td>
+                                        <div>@Html.DisplayNameFor(model => model.Sector) = @Html.DisplayFor(modelItem => item.Sector)</div>
+                                        <div>@Html.DisplayNameFor(model => model.Camera) = @Html.DisplayFor(modelItem => item.Camera)</div>
+                                        <div>@Html.DisplayNameFor(model => model.CCD) = @Html.DisplayFor(modelItem => item.CCD)</div>
+                                    </td>
+                                    <td>@string.Format("{0:N3}%",(Math.Truncate(item.IsPlanet * 100000)/1000))</td>
+                                    <td>@string.Format("{0:N3}%",(Math.Truncate(item.IsNotPlanet * 100000)/1000))</td>
+                                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <p class="small">* Showing the first 500 results</p>
+    </section>
