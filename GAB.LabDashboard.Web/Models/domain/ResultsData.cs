@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,15 +14,38 @@ namespace GAB.LabDashboard.Web.Models.domain
         public int OutputId { get; set; }
         public string DeploymentId { get; set; }
         public string Email { get; set; }
+
+        [DisplayName("Attendee")]
         public string Fullname { get; set; }
         public string Location { get; set; }
+        [DisplayName("Team")]
         public string TeamName { get; set; }
+        [DisplayName("Company")]
         public string CompanyName { get; set; }
+        [DisplayName("Country")]
         public string CountryCode { get; set; }
-        public bool IsPlanet { get; set; }
-        public float Probability { get; set; }
+        [DisplayName("Client")]
+        public string ClientVersion { get; set; }
+
+        [DisplayName("Target ID")]
+        public int TICId { get; set; }
+
+        public int Sector { get; set; }
+        public int Camera { get; set; }
+        public int CCD { get; set; }
+        public double RA { get; set; }
+        public double Dec { get; set; }
+        public double TMag { get; set; }
+
+        [DisplayName("% P")]
+        public double IsPlanet { get; set; }
+
+        [DisplayName("% !P")]
+        public double IsNotPlanet { get; set; }
+
         public int TotalScore { get; set; }
         public DateTime CreationDate { get; set; }
+        [DisplayName("Date")]
         public DateTime ModificationDate { get; set; }
     }
 }

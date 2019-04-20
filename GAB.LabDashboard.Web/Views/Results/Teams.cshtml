@@ -2,80 +2,36 @@
 
 @{
     ViewData["Title"] = "Results by Teams";
-
-    //var data =
 }
 
-@section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        var options = {
-            chart: {
-                type: 'pie',
-                height: 300,
-                foreColor: '#f0f0f0',
-                fontFamily: 'Helvetica, Arial, sans-serif',
-            },
-            stroke: {
-                show: true,
-                curve: 'smooth',
-                lineCap: 'butt',
-                colors: undefined,
-                width: 0,
-                dashArray: 0,      
-            },
-            series: [66, 18, 9, 5, 2],
-            labels: ['Global Azure Team', 'Treekies', 'TenerifeDev', 'Intelequia Team', "Rayo Team"],
-            colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea'],
-            markers: {
-                colors: ['#0088ff', '#0088ff', '#0088ff', '#0088ff', '#0088ff']
-            },
-            dataLabels: {
-                enabled: false,
-                style: {
-                    colors: ['#363636', '#363636', '#363636', '#363636', '#363636']
+    <section class="results-container">
+        <h2>Results by Location</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>@Html.DisplayNameFor(model => model.TeamName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Score)</th>
+                    <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var position = 0;
+
+                    foreach (var item in Model)
+                    {
+                        position++;
+                        <tr>
+                            <td>@position</td>
+                            <td>@Html.DisplayFor(modelItem => item.TeamName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
+                        </tr>
+                    }
                 }
-            },
-            fill: {
-                colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea']
-            }
-        }
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-        chart.render();
-    </script>
-}
-
-<section class="results-container">
-    <h2>Results by Location</h2>
-
-    <section id="chart" class="results-dashboard"></section>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Position</th>
-                <th>@Html.DisplayNameFor(model => model.TeamName)</th>
-                <th>@Html.DisplayNameFor(model => model.Score)</th>
-                <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                var position = 0;
-
-                foreach (var item in Model)
-                {
-                    position++;
-                    <tr>
-                        <td>@position</td>
-                        <td>@Html.DisplayFor(modelItem => item.TeamName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Score)</td>
-                        <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
-</section>
+            </tbody>
+        </table>
+        <p class="small">* Showing the first 500 results</p>
+    </section>
