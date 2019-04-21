@@ -2,10 +2,148 @@
 
 @{
     ViewData["Title"] = "Results by Company";
+
+    decimal totalScore = Model.Sum(i => i.Score);
+    var top5 = Model.Take(5);
+    var labels = top5.Select(i => i.CompanyName).Take(5).ToList();
+    var scores = top5.Select(i => i.Score).ToList();
+    var inputs = top5.Select(i => i.TotalItems).ToList();
+    var percentages = top5.Select(i => Math.Round((i.Score / totalScore) * 100, 2, MidpointRounding.AwayFromZero)).Take(5).ToList();
+    var othersScore = totalScore - top5.Sum(i => i.Score);
+    var othersPercentage = Math.Round(othersScore * 100 / totalScore, 2, MidpointRounding.AwayFromZero);
+    var othersInputs = Model.Sum(i => i.TotalItems) - top5.Sum(i => i.TotalItems);
 }
 
-    <section class="results-container">
-        <h2>Results by Company</h2>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+
+        var arrLabels = [];
+        var arrScores = [];
+        var arrInputs = [];
+        var arrPercentages = [];
+        @for (int i = 0; i < 5; i++)
+        {
+            @:arrLabels.push("@labels[i]");
+            @:arrPercentages.push(@percentages[i].ToString().Replace(',', '.'));
+            @:arrScores.push(@scores[i]);
+            @:arrInputs.push(@inputs[i])
+        }
+
+        arrLabels.push("Others");
+        arrScores.push(@othersScore);
+        arrInputs.push(@othersInputs);
+        arrPercentages.push(@othersPercentage.ToString().Replace(',', '.'));
+
+        var options = {
+            chart: {
+                type: 'pie',
+                height: 300,
+                foreColor: '#f0f0f0',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+            },
+            stroke: {
+                show: false,
+                curve: 'smooth',
+                lineCap: 'butt',
+                colors: undefined,
+                width: 0,
+                dashArray: 0,
+            },
+            series: arrPercentages,
+            labels: arrLabels,
+            colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea', '#226688'],
+            markers: {
+                colors: ['#0088ff', '#0088ff', '#0088ff', '#0088ff', '#0088ff', '#0088ff']
+            },
+            dataLabels: {
+                enabled: false,
+                style: {
+                    colors: ['#363636', '#363636', '#363636', '#363636', '#363636', '#363636']
+                }
+            },
+            fill: {
+                colors: ['#6a6a6a', '#8a8a8a', '#aaaaaa', '#cacaca', '#eaeaea', '#226688']
+            },
+            legend: {
+                show: true,
+                position: 'left',
+                markers: {
+                    radius: 0
+                }
+            }
+        }
+
+        var chart = new ApexCharts(document.querySelector("#piechart"), options);
+
+        chart.render();
+
+        var barOptions = {
+            chart: {
+                height: 300,
+                type: 'bar',
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                offsetX: -6,
+                style: {
+                    fontSize: '12px',
+                    colors: ['#fff']
+                }
+            },
+            series: [{
+                data: arrInputs
+            }],
+            fill: {
+                colors: ['#226688']
+            },
+            xaxis: {
+                categories: arrLabels,
+                labels: {
+                    style: {
+                        colors: ['#fff']
+                    }
+                },
+                lines: {
+                    show: false,
+                }
+            },
+            yaxis: {
+                categories: arrLabels,
+                labels: {
+                    style: {
+                        colors: ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff']
+                    }
+                },
+                lines: {
+                    show: false,
+                }
+
+            },
+            colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800']
+       };
+        var barchart = new ApexCharts(document.querySelector("#barchart"), barOptions);
+
+        barchart.render();
+    </script>
+}
+<section class="results-container">
+    <h2>Results by Company</h2>
+    <section class="results-dashboard row">
+        <article class="chart-container col-md-6">
+            <header>Score</header>
+            <div id="piechart"></div>
+        </article>
+        <article class="chart-container col-md-6">
+            <header>Items</header>
+            <div id="barchart"></div>
+        </article>
+    </section>
 
         <table class="table">
             <thead>
