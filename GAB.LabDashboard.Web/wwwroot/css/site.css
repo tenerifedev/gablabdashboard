@@ -95,7 +95,13 @@ body {
     flex: 1;
 }
 
-.dashboard-panel-static {
+.dashboard-panel-static-news {
+    background: rgba(74,74, 74, 0.65);
+    margin: 10px;
+    padding: 20px;
+    display: block;
+}
+    .dashboard-panel-static {
     display: block;
     margin: 10px;
     padding: 20px;
@@ -186,6 +192,12 @@ body {
     vertical-align: middle;
     margin-right: 8px;
 }
+
+    .results-container .candidates-results .country-flag {
+        max-width: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
 
 .footer {
     line-height: 23px;

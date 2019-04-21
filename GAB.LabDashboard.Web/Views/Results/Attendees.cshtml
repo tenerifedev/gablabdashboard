@@ -146,30 +146,31 @@
         </article>
     </section>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Position</th>
-                <th>@Html.DisplayNameFor(model => model.AttendeeName)</th>
-                <th>@Html.DisplayNameFor(model => model.Score)</th>
-                <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                var position = 0;
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>@Html.DisplayNameFor(model => model.AttendeeName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Score)</th>
+                    <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var position = 0;
 
-                foreach (var item in Model)
-                {
-                    position++;
-                    <tr>
-                        <td>@position</td>
-                        <td>@Html.DisplayFor(modelItem => item.AttendeeName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Score)</td>
-                        <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
-                    </tr>
+                    foreach (var item in Model)
+                    {
+                        position++;
+                        <tr>
+                            <td>@position</td>
+                            <td>@Html.DisplayFor(modelItem => item.AttendeeName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
+                        </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
-</section>
+            </tbody>
+        </table>
+        <p class="small">* Showing the first 500 results</p>
+    </section>

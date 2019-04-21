@@ -160,17 +160,17 @@
             @{
                 var position = 0;
 
-                foreach (var item in Model)
-                {
-                    position++;
-                    <tr>
-                        <td>@position</td>
-                        <td>@Html.DisplayFor(modelItem => item.LocationName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Score)</td>
-                        <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
-                    </tr>
+                    foreach (var item in Model)
+                    {
+                        position++;
+                        <tr>
+                            <td>@position</td>
+                            <td>@Html.DisplayFor(modelItem => item.LocationName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
+                        </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
-</section>
+            </tbody>
+        </table>
+    </section>

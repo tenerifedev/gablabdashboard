@@ -26,7 +26,7 @@ namespace GAB.LabDashboard.Web.Controllers
             _configuration = configuration;
         }
 
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Index()
         {            
             Summary result;

@@ -25,7 +25,7 @@ namespace GAB.LabDashboard.Web.Controllers
         }
 
         // GET: Results
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Attendees()
         {
             List<ResultsByAttendee> result;
@@ -37,7 +37,7 @@ namespace GAB.LabDashboard.Web.Controllers
             return View(result);
         }
 
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Companies()
         {
             List<ResultsByCompany> result;
@@ -49,7 +49,7 @@ namespace GAB.LabDashboard.Web.Controllers
             return View(result);
         }
 
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Countries()
         {
             List<ResultsByCountry> result;
@@ -61,7 +61,7 @@ namespace GAB.LabDashboard.Web.Controllers
             return View(result);
         }
 
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Locations()
         {
             List<ResultsByLocation> result;
@@ -73,7 +73,7 @@ namespace GAB.LabDashboard.Web.Controllers
             return View(result);
         }
 
-        [ResponseCache(Duration = 30, Location = ResponseCacheLocation.Any)]
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Teams()
         {
             List<ResultsByTeam> result;
@@ -81,6 +81,31 @@ namespace GAB.LabDashboard.Web.Controllers
             {
                 result = await context.ResultsByTeam.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopTeams")).ToListAsync();
                 _cache.Set("GAB:Teams", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
+            }
+            return View(result);
+        }
+
+        [ResponseCache(Duration = 300, Location = ResponseCacheLocation.Any)]
+        public async Task<IActionResult> Candidates()
+        {
+            List<ResultsData> result;
+            if (!_cache.TryGetValue("GAB:Candidates", out result))
+            {
+                DateTime minDate;
+                if (!DateTime.TryParse(_configuration.GetValue<string>("Caching:ShowTopCandidatesMinDate"), out minDate)) {
+                    minDate = new DateTime(2019, 4, 26);
+                }
+                double minIsPlanet;
+                if (!double.TryParse(_configuration.GetValue<string>("Caching:ShowTopCandidatesMinIsPlanet"), out minIsPlanet))
+                {
+                    minIsPlanet = 0.9999999999999;
+                }
+                result = await context.ResultsData
+                    .Where(x => x.IsPlanet > minIsPlanet && x.ModificationDate > minDate)
+                    .OrderByDescending(i => i.ModificationDate)
+                    .Take(_configuration
+                    .GetValue<int>("Caching:ShowTopCandidates")).ToListAsync();
+                _cache.Set("GAB:Candidates", result, TimeSpan.FromSeconds(_configuration.GetValue<int>("Caching:ServerTimeoutInSeconds")));
             }
             return View(result);
         }
