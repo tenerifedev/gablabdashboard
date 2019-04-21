@@ -95,8 +95,13 @@ namespace GAB.LabDashboard.Web.Controllers
                 if (!DateTime.TryParse(_configuration.GetValue<string>("Caching:ShowTopCandidatesMinDate"), out minDate)) {
                     minDate = new DateTime(2019, 4, 26);
                 }
+                double minIsPlanet;
+                if (!double.TryParse(_configuration.GetValue<string>("Caching:ShowTopCandidatesMinIsPlanet"), out minIsPlanet))
+                {
+                    minIsPlanet = 0.9999999999999;
+                }
                 result = await context.ResultsData
-                    .Where(x => x.IsPlanet > 0.99999 && x.ModificationDate > minDate)
+                    .Where(x => x.IsPlanet > minIsPlanet && x.ModificationDate > minDate)
                     .OrderByDescending(i => i.ModificationDate)
                     .Take(_configuration
                     .GetValue<int>("Caching:ShowTopCandidates")).ToListAsync();
