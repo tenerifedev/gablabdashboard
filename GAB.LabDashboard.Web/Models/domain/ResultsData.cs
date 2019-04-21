@@ -43,6 +43,15 @@ namespace GAB.LabDashboard.Web.Models.domain
         [DisplayName("% !P")]
         public double IsNotPlanet { get; set; }
 
+        [DisplayName("Period")]
+        public string Per { get; set; }
+
+        [DisplayName("TPF")]
+        public string Tpf { get; set; }
+
+        [DisplayName("Light Curve")]
+        public string Lc { get; set; }
+
         public int TotalScore { get; set; }
         public DateTime CreationDate { get; set; }
         [DisplayName("Date")]
