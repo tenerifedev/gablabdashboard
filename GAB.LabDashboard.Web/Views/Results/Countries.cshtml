@@ -10,7 +10,6 @@
             <thead>
                 <tr>
                     <th>Position</th>
-                    <th>@Html.DisplayNameFor(model => model.CountryCode)</th>
                     <th>@Html.DisplayNameFor(model => model.CountryName)</th>
                     <th>@Html.DisplayNameFor(model => model.Score)</th>
                     <th>@Html.DisplayNameFor(model => model.TotalItems)</th>
@@ -25,8 +24,7 @@
                         position++;
                         <tr>
                             <td>@position</td>
-                            <td><img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.CountryCode)</td>
-                            <td>@Html.DisplayFor(modelItem => item.CountryName)</td>
+                            <td><img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.CountryName)</td>
                             <td>@Html.DisplayFor(modelItem => item.Score)</td>
                             <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
                         </tr>
