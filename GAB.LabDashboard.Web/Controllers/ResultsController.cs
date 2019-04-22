@@ -29,6 +29,7 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Attendees()
         {
             List<ResultsByAttendee> result;
+
             if (!_cache.TryGetValue("GAB:Attendees", out result))
             {
                 result = await context.ResultsByAttendee.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopAttendees")).ToListAsync();
@@ -41,6 +42,7 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Companies()
         {
             List<ResultsByCompany> result;
+
             if (!_cache.TryGetValue("GAB:Companies", out result))
             {
                 result = await context.ResultsByCompany.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopCompanies")).ToListAsync();
@@ -53,6 +55,7 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Countries()
         {
             List<ResultsByCountry> result;
+
             if (!_cache.TryGetValue("GAB:Countries", out result))
             {
                 result = await context.ResultsByCountry.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopCountries")).ToListAsync();
@@ -65,6 +68,7 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Locations()
         {
             List<ResultsByLocation> result;
+
             if (!_cache.TryGetValue("GAB:Locations", out result))
             {
                 result = await context.ResultsByLocation.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopLocations")).ToListAsync();
@@ -74,9 +78,11 @@ namespace GAB.LabDashboard.Web.Controllers
         }
 
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any)]
-        public async Task<IActionResult> Teams()
+        public async Task<IActionResult> Teams(string orderField, string orderDirection, int page = 0)
         {
             List<ResultsByTeam> result;
+            var pages = 1;
+
             if (!_cache.TryGetValue("GAB:Teams", out result))
             {
                 result = await context.ResultsByTeam.OrderByDescending(i => i.Score).Take(_configuration.GetValue<int>("Caching:ShowTopTeams")).ToListAsync();
@@ -89,6 +95,7 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Candidates()
         {
             List<ResultsData> result;
+
             if (!_cache.TryGetValue("GAB:Candidates", out result))
             {
                 DateTime minDate;

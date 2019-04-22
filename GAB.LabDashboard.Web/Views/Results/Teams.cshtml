@@ -130,6 +130,15 @@
         var barchart = new ApexCharts(document.querySelector("#barchart"), barOptions);
 
         barchart.render();
+
+
+        $(document).ready(function () {
+            $('.table').DataTable({
+                'paging': false,
+                'ordering': true
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
     </script>
 }
 
@@ -160,18 +169,18 @@
             @{
                 var position = 0;
 
-                    foreach (var item in Model)
-                    {
-                        position++;
-                        <tr>
-                            <td>@position</td>
-                            <td>@Html.DisplayFor(modelItem => item.TeamName)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Score)</td>
-                            <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
-                        </tr>
-                    }
+                foreach (var item in Model)
+                {
+                    position++;
+                    <tr>
+                        <td>@position</td>
+                        <td>@Html.DisplayFor(modelItem => item.TeamName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Score)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-        <p class="small">* Showing the first 500 results</p>
-    </section>
+            }
+        </tbody>
+    </table>
+    <p class="small">* Showing the first 500 results</p>
+</section>

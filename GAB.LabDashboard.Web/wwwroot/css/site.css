@@ -81,6 +81,7 @@ body {
     /* Margin bottom by footer height */
     background: linear-gradient( rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) ), url('/images/layout/wallpaper-universe-8.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -101,7 +102,8 @@ body {
     padding: 20px;
     display: block;
 }
-    .dashboard-panel-static {
+
+.dashboard-panel-static {
     display: block;
     margin: 10px;
     padding: 20px;
@@ -160,6 +162,7 @@ body {
     .results-dashboard .chart-container {
         background-color: rgba(0, 0, 0, .25) !important;
     }
+
     .results-dashboard #piechart {
         box-sizing: border-box;
         color: #fff;
@@ -170,6 +173,26 @@ body {
         color: #fff;
     }
 
+.results-container .dataTables_wrapper .row:first-child {
+    margin: 20px 0px 0 0px;
+    padding-top: 10px;
+    background: rgba(20, 54, 92, 0.85);
+}
+
+.results-container .dataTables_wrapper .dataTables_filter {
+    font-size: 1em;
+    width: 100%;
+}
+
+    .results-container .dataTables_wrapper .dataTables_filter label {
+        /*font-size: 0;*/
+    }
+
+        .results-container .dataTables_wrapper .dataTables_filter label input {
+            font-size: 10pt;
+            border: none;
+            border-radius: 0;
+        }
 
 .results-container .table {
     border-bottom: 1px solid rgba(40,40,40,0.25);
@@ -177,7 +200,7 @@ body {
 }
 
     .results-container .table th {
-        background: argb(14365c);
+        background: rgba(20, 54, 92, 0.85);
         border: none !important;
     }
 
@@ -193,11 +216,11 @@ body {
     margin-right: 8px;
 }
 
-    .results-container .candidates-results .country-flag {
-        max-width: 20px;
-        vertical-align: middle;
-        margin-right: 8px;
-    }
+.results-container .candidates-results .country-flag {
+    max-width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
 
 .footer {
     line-height: 23px;
