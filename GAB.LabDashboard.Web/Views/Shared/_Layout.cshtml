@@ -29,7 +29,7 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     </environment>
-    <link rel="stylesheet" href="~/css/site.css?v=2019-04-21" />
+    <link rel="stylesheet" href="~/css/site.css?v=2019-04-23" />
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
@@ -46,7 +46,7 @@
                 </button>
                 <div id="site-menu" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab" target="_blank">Instructions</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab" target=" ">Instructions</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Leaderboards
@@ -57,9 +57,10 @@
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Countries">By Country</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Locations">By Location</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Teams">By Team</a>
+                                <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Candidates">Candidates</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Results" asp-action="Candidates">Candidates</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="http://aka.ms/gabchat" target="_blank">Global Chat</a></li>
                         <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     </ul>
                 </div>
