@@ -160,6 +160,7 @@ body {
 
 
     .results-dashboard .chart-container {
+        padding-top: 20px;
         background-color: rgba(0, 0, 0, .25) !important;
     }
 
@@ -208,6 +209,18 @@ body {
         background: rgba(74,74, 74, 0.65);
         border-top: none !important;
         border-bottom: 1px solid rgba(40,40,40,0.25);
+    }
+
+    .results-container .table tbody tr:nth-child(1) td {
+        background: rgba(255, 215, 0, 0.4);
+    }
+
+    .results-container .table tbody tr:nth-child(2) td {
+        background: rgba(211, 211, 211, 0.4);
+    }
+
+    .results-container .table tbody tr:nth-child(3) td {
+        background: rgba(205, 127, 50, 0.4);
     }
 
 .results-container .countries-results .country-flag {

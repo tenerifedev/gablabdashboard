@@ -51,8 +51,8 @@
                                         }
                                     </td>
                                     <td class="small">
-                                        <div>🌎 = @string.Format("{0:N3}%",(Math.Truncate(item.IsPlanet * 100000)/1000))</div>
-                                        <div>!🌎 = @string.Format("{0:N3}%",(Math.Truncate(item.IsNotPlanet * 100000)/1000))</div>
+                                        <div><i class="fas fa-globe-europe"></i> = @string.Format("{0:N3}%",(Math.Truncate(item.IsPlanet * 100000)/1000))</div>
+                                        <div>!<i class="fas fa-globe-europe"></i> = @string.Format("{0:N3}%",(Math.Truncate(item.IsNotPlanet * 100000)/1000))</div>
                                         @if (!string.IsNullOrEmpty(item.Per)) {
                                         <div>Period = @item.Per</div>
                                         }                                        
