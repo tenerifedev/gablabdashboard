@@ -240,6 +240,9 @@ body {
     line-height: 23px;
     background-color: rgba(0, 123, 255, .75) !important;
 }
+    .footer a {
+        color: yellow;
+    }
 
 #footer-mission {
     padding: 20px;
@@ -272,3 +275,11 @@ body {
         font-size: 0.8em;
         margin-bottom: 20px;
     }
+#cookieConsent {
+    margin-bottom: 0px;
+    border-radius: 0;
+    font-size: 0.8em;
+}
+#cookieConsent button {
+    font-size: 1.0em;
+}

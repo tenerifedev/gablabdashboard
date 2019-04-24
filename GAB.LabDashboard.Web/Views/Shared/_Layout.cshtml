@@ -29,10 +29,11 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     </environment>
-    <link rel="stylesheet" href="~/css/site.css?v=2019-04-23" />
+    <link rel="stylesheet" href="~/css/site.css?v=2019-04-24" />
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
+    <partial name="_CookieConsentPartial" />
     <header id="site-header" class="bg-dark">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
             <div class="container">
@@ -67,7 +68,7 @@
             </div>
         </nav>
     </header>
-    <div id="site-body" class="container">
+    <div id="site-body" class="container">        
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -78,7 +79,8 @@
                 One of the missions of Global Azure Bootcamp is to provide a lab that gives researchers access to large scale computing resources to help process vast quantities of data. In previous years we have tried to bring you a science lab that is both interesting and represents great research. This year is no exception, this year we bring you the stars themselves!
             </div>
             <div id="footer-copyright" class="text-light">
-                &copy; 2019 - <a class="text-light" href="http://global.azurebootcamp.net">Global Azure Bootcamp</a>, an initiative by Microsoft Azure User Groups around the world.
+                &copy; 2019 - <a class="text-light" href="http://global.azurebootcamp.net">Global Azure Bootcamp</a>, an initiative by Microsoft Azure User Groups around the 
+                world. - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a> - <a asp-area="" asp-controller="Home" asp-action="Cookies">Cookies Policy</a>
             </div>
         </div>
     </footer>

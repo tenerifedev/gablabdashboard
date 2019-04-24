@@ -42,6 +42,10 @@ namespace GAB.LabDashboard.Web.Controllers
         {
             return View();
         }
+        public IActionResult Cookies()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
