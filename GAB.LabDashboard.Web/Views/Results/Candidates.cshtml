@@ -3,73 +3,66 @@
 @{
     ViewData["Title"] = "List of Exoplanet candidates";
 }
-<style>
-    body {
-        background-image: none;
-        background-color: lightslategrey; /* fallback color */
-        background: linear-gradient( to bottom, lightslategrey, black );
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-    }
-</style>
-    <section class="results-container candidates-container">
-        <h2>Latest Exoplanet Candidates</h2>
 
-        <table class="table candidates-results">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Target</th>
-                    <th>Source</th>
-                    <th>Results</th>
-                    <th>Processed By</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    var position = 0;
+<section class="results-container candidates-container">
+    <h2>Latest Exoplanet Candidates</h2>
 
-                    foreach (var item in Model)
-                    {
-                        position++;
-                                <tr>
-                                    <td>@position</td>
-                                    <td>
-                                        <div><strong>TIC ID = @Html.DisplayFor(modelItem => item.TICId)</strong></div>
-                                        <div class="small">@Html.DisplayNameFor(model => model.RA) = @Html.DisplayFor(modelItem => item.RA)</div>
-                                        <div class="small">@Html.DisplayNameFor(model => model.Dec) = @Html.DisplayFor(modelItem => item.Dec)</div>
-                                        <div class="small">@Html.DisplayNameFor(model => model.TMag) = @string.Format("{0:N5}", item.TMag)</div>
-                                    </td>
-                                    <td class="small">
-                                        <div>@Html.DisplayNameFor(model => model.Sector) = @Html.DisplayFor(modelItem => item.Sector)</div>
-                                        <div>@Html.DisplayNameFor(model => model.Camera) = @Html.DisplayFor(modelItem => item.Camera)</div>
-                                        <div>@Html.DisplayNameFor(model => model.CCD) = @Html.DisplayFor(modelItem => item.CCD)</div>
-                                        @if (!string.IsNullOrEmpty(item.Tpf)) {
-                                        <div><a href="@item.Tpf">Target Pixel File</a></div>
-                                        }
-                                    </td>
-                                    <td class="small">
-                                        <div>🌎 = @string.Format("{0:N3}%",(Math.Truncate(item.IsPlanet * 100000)/1000))</div>
-                                        <div>!🌎 = @string.Format("{0:N3}%",(Math.Truncate(item.IsNotPlanet * 100000)/1000))</div>
-                                        @if (!string.IsNullOrEmpty(item.Per)) {
-                                        <div>Period = @item.Per</div>
-                                        }                                        
-                                        @if (!string.IsNullOrEmpty(item.Lc)) {
-                                        <div><a href="@item.Lc">Light Curve</a></div>
-                                        }
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.Fullname)
-                                        </div>
-                                        <div class="small">@Html.DisplayFor(modelItem => item.ModificationDate)</div>
-                                    </td>
-                                </tr>
-                    }
+    <table class="table candidates-results">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Target</th>
+                <th>Source</th>
+                <th>Results</th>
+                <th>Processed By</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var position = 0;
+
+                foreach (var item in Model)
+                {
+                    position++;
+                    <tr>
+                        <td>@position</td>
+                        <td>
+                            <div><strong>TIC ID = @Html.DisplayFor(modelItem => item.TICId)</strong></div>
+                            <div class="small">@Html.DisplayNameFor(model => model.RA) = @Html.DisplayFor(modelItem => item.RA)</div>
+                            <div class="small">@Html.DisplayNameFor(model => model.Dec) = @Html.DisplayFor(modelItem => item.Dec)</div>
+                            <div class="small">@Html.DisplayNameFor(model => model.TMag) = @string.Format("{0:N5}", item.TMag)</div>
+                        </td>
+                        <td class="small">
+                            <div>@Html.DisplayNameFor(model => model.Sector) = @Html.DisplayFor(modelItem => item.Sector)</div>
+                            <div>@Html.DisplayNameFor(model => model.Camera) = @Html.DisplayFor(modelItem => item.Camera)</div>
+                            <div>@Html.DisplayNameFor(model => model.CCD) = @Html.DisplayFor(modelItem => item.CCD)</div>
+                            @if (!string.IsNullOrEmpty(item.Tpf))
+                            {
+                                <div><a href="@item.Tpf">Target Pixel File</a></div>
+                            }
+                        </td>
+                        <td class="small">
+                            <div><i class="fas fa-globe-europe"></i> = @string.Format("{0:N3}%", (Math.Truncate(item.IsPlanet * 100000) / 1000))</div>
+                            <div>!<i class="fas fa-globe-europe"></i> = @string.Format("{0:N3}%", (Math.Truncate(item.IsNotPlanet * 100000) / 1000))</div>
+                            @if (!string.IsNullOrEmpty(item.Per))
+                            {
+                                <div>Period = @item.Per</div>
+                            }
+                            @if (!string.IsNullOrEmpty(item.Lc))
+                            {
+                                <div><a href="@item.Lc">Light Curve</a></div>
+                            }
+                        </td>
+                        <td>
+                            <div>
+                                <img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.Fullname)
+                            </div>
+                            <div class="small">@Html.DisplayFor(modelItem => item.ModificationDate)</div>
+                        </td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-        <p class="small">* Showing the first 500 results</p>
-    </section>
+            }
+        </tbody>
+    </table>
+    <p class="small">* Showing the first 500 results</p>
+</section>

@@ -130,6 +130,14 @@
         var barchart = new ApexCharts(document.querySelector("#barchart"), barOptions);
 
         barchart.render();
+
+       $(document).ready(function () {
+            $('.table').DataTable({
+                'paging': false,
+                'ordering': true
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
     </script>
 }
 

@@ -160,6 +160,7 @@ body {
 
 
     .results-dashboard .chart-container {
+        padding-top: 20px;
         background-color: rgba(0, 0, 0, .25) !important;
     }
 
@@ -211,6 +212,18 @@ body {
         color: white;
     }
 
+    .results-container .table tbody tr:nth-child(1) td {
+        background: rgba(255, 215, 0, 0.4);
+    }
+
+    .results-container .table tbody tr:nth-child(2) td {
+        background: rgba(211, 211, 211, 0.4);
+    }
+
+    .results-container .table tbody tr:nth-child(3) td {
+        background: rgba(205, 127, 50, 0.4);
+    }
+
 .results-container .countries-results .country-flag {
     max-width: 36px;
     vertical-align: middle;
@@ -227,6 +240,9 @@ body {
     line-height: 23px;
     background-color: rgba(0, 123, 255, .75) !important;
 }
+    .footer a {
+        color: yellow;
+    }
 
 #footer-mission {
     padding: 20px;
@@ -259,3 +275,11 @@ body {
         font-size: 0.8em;
         margin-bottom: 20px;
     }
+#cookieConsent {
+    margin-bottom: 0px;
+    border-radius: 0;
+    font-size: 0.8em;
+}
+#cookieConsent button {
+    font-size: 1.0em;
+}

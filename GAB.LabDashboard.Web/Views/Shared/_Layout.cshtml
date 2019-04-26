@@ -29,10 +29,11 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     </environment>
-    <link rel="stylesheet" href="~/css/site.css?v=2019-04-23" />
+    <link rel="stylesheet" href="~/css/site.css?v=2019-04-24" />
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
+    <partial name="_CookieConsentPartial" />
     <header id="site-header" class="bg-dark">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
             <div class="container">
@@ -46,7 +47,7 @@
                 </button>
                 <div id="site-menu" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab" target="_blank">Instructions</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="https://github.com/intelequia/GAB2019ScienceLab" target=" ">Instructions</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Leaderboards
@@ -57,16 +58,17 @@
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Countries">By Country</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Locations">By Location</a>
                                 <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Teams">By Team</a>
+                                <a class="dropdown-item text-light" asp-area="" asp-controller="Results" asp-action="Candidates">Candidates</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Results" asp-action="Candidates">Candidates</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="http://aka.ms/gabchat" target="_blank">Global Chat</a></li>
                         <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div id="site-body" class="container">
+    <div id="site-body" class="container">        
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -77,7 +79,8 @@
                 One of the missions of Global Azure Bootcamp is to provide a lab that gives researchers access to large scale computing resources to help process vast quantities of data. In previous years we have tried to bring you a science lab that is both interesting and represents great research. This year is no exception, this year we bring you the stars themselves!
             </div>
             <div id="footer-copyright" class="text-light">
-                &copy; 2019 - <a class="text-light" href="http://global.azurebootcamp.net">Global Azure Bootcamp</a>, an initiative by Microsoft Azure User Groups around the world.
+                &copy; 2019 - <a class="text-light" href="http://global.azurebootcamp.net">Global Azure Bootcamp</a>, an initiative by Microsoft Azure User Groups around the 
+                world. - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a> - <a asp-area="" asp-controller="Home" asp-action="Cookies">Cookies Policy</a>
             </div>
         </div>
     </footer>
