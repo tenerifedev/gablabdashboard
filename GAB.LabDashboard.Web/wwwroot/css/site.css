@@ -224,7 +224,9 @@ body {
         background: rgba(205, 127, 50, 0.4);
     }
 
-.results-container .countries-results .country-flag {
+.results-container .countries-results .country-flag,
+.results-container .attendees-results .country-flag
+{
     max-width: 36px;
     vertical-align: middle;
     margin-right: 8px;

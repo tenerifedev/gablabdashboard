@@ -12,5 +12,7 @@ namespace GAB.LabDashboard.Web.Models.domain
         public string AttendeeName { get; set; }
         [DisplayName("Email")]
         public string Email { get; set; }
+        [DisplayName("CountryCode")]
+        public string CountryCode { get; set; }
     }
 }

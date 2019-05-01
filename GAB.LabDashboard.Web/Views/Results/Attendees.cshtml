@@ -154,7 +154,7 @@
         </article>
     </section>
 
-        <table class="table">
+        <table class="table attendees-results">
             <thead>
                 <tr>
                     <th>Position</th>
@@ -172,7 +172,7 @@
                         position++;
                         <tr>
                             <td>@position</td>
-                            <td>@Html.DisplayFor(modelItem => item.AttendeeName)</td>
+                            <td><img class="country-flag" src="@Url.Content($"~/images/flags/{item.CountryCode}.jpg")" alt="@item.CountryCode" /> @Html.DisplayFor(modelItem => item.AttendeeName)</td>
                             <td>@Html.DisplayFor(modelItem => item.Score)</td>
                             <td>@Html.DisplayFor(modelItem => item.TotalItems)</td>
                         </tr>
