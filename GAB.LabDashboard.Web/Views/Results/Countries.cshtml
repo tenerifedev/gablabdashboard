@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Results by Country";
 
-    decimal totalScore = Model.Sum(i => i.Score);
+    double totalScore = Model.Sum(i => Convert.ToDouble(i.Score));
     var top5 = Model.Take(5);
     var labels = top5.Select(i => i.CountryName).Take(5).ToList();
     var scores = top5.Select(i => i.Score).ToList();
