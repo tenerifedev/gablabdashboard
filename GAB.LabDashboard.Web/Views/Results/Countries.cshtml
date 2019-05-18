@@ -9,7 +9,7 @@
     var scores = top5.Select(i => i.Score).ToList();
     var inputs = top5.Select(i => i.TotalItems).ToList();
     var percentages = top5.Select(i => Math.Round((i.Score / totalScore) * 100, 2, MidpointRounding.AwayFromZero)).Take(5).ToList();
-    var othersScore = totalScore - top5.Sum(i => i.Score);
+    var othersScore = totalScore - top5.Sum(i => Convert.ToDouble(i.Score));
     var othersPercentage = Math.Round(othersScore * 100 / totalScore, 2, MidpointRounding.AwayFromZero);
     var othersInputs = Model.Sum(i => i.TotalItems) - top5.Sum(i => i.TotalItems);
 }
