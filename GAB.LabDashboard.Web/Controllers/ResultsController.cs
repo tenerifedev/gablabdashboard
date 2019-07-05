@@ -81,7 +81,6 @@ namespace GAB.LabDashboard.Web.Controllers
         public async Task<IActionResult> Teams(string orderField, string orderDirection, int page = 0)
         {
             List<ResultsByTeam> result;
-            var pages = 1;
 
             if (!_cache.TryGetValue("GAB:Teams", out result))
             {
