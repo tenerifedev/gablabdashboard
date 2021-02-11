@@ -10,7 +10,7 @@
     "gulp-concat": "2.6.1",
     "gulp-cssmin": "0.2.0",
     "gulp-uglify": "3.0.2",
-    "apexcharts": "3.6.6",
+    "apexcharts": "3.24.0",
     "gulp-tfs-checkout": "1.1.0",
     "gulp-rename": "1.4.0"
   }
